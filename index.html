@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="full-form">
+        <h1>Welcome to currency converter</h1>
+
+        <div id="amount">
+            <p>Enter Amount</p>
+            <input value="100" id="amount-input" required>
+        </div>
+
+        <div class="form">
+            <div class="from">
+                <p>From</p>
+                <img id="from-flag" src="https://flagsapi.com/BD/shiny/64.png">
+                <div class="options">
+                    <select name="from-currency" id="from-currency">
+                        <!-- filled by JS -->
+                    </select>
+                </div>
+            </div>
+
+            <img src="https://img.icons8.com/?size=100&id=68311&format=png&color=000000" alt="">
+
+            <div class="to">
+                <p>To</p>
+                <img id="to-flag" src="https://flagsapi.com/US/shiny/64.png">
+                <div class="options">
+                    <select name="to-currency" id="to-currency">
+                        <!-- filled by JS -->
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <button id="exchange-button">Get Exchange Rate</button>
+        <p id="final-result">1 Dollar = 120 BDT</p>
+    </div>
+    
+
+    <!-- Order is important -->
+    <script src="codes.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
