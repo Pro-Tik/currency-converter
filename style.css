@@ -1,0 +1,207 @@
+/* ===== General Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* ===== Page Layout ===== */
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #111827, #1e293b);
+    color: #0f172a;
+}
+
+/* ===== Main Card ===== */
+#full-form {
+    background: #0b1120;
+    color: #e5e7eb;
+    width: 90%;
+    max-width: 500px;
+    padding: 2.5rem 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+/* ===== Heading ===== */
+#full-form h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    letter-spacing: 0.04em;
+    color: #f9fafb;
+}
+
+/* ===== Amount Section ===== */
+#amount {
+    margin-bottom: 1.5rem;
+}
+
+#amount p {
+    margin-bottom: 0.4rem;
+    font-size: 0.95rem;
+    color: #cbd5f5;
+}
+
+#amount-input {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    border-radius: 0.8rem;
+    border: 1px solid #4b5563;
+    background-color: #020617;
+    color: #e5e7eb;
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+#amount-input:focus {
+    border-color: #38bdf8;
+    box-shadow: 0 0 0 1px #38bdf8;
+    background-color: #020617;
+}
+
+/* ===== Currency Row ===== */
+.form {
+    margin-bottom: 1.7rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), transparent 55%),
+                radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.18), transparent 55%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+/* Shared styles for From / To blocks */
+.from,
+.to {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    flex: 1;
+}
+
+.from p,
+.to p {
+    font-size: 0.85rem;
+    color: #d1d5db;
+}
+
+/* Flag image */
+.from img,
+.to img {
+    width: 40px;
+    height: 40px;
+    border-radius: 0.8rem;
+    border: 1px solid rgba(148, 163, 184, 0.7);
+    object-fit: cover;
+    background: #020617;
+}
+
+/* Middle exchange icon */
+.form > img {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    opacity: 0.9;
+}
+
+/* Options / Select */
+.options {
+    margin-top: 0.1rem;
+}
+
+.options select {
+    width: 100%;
+    padding: 0.45rem 0.7rem;
+    border-radius: 0.8rem;
+    border: 1px solid #4b5563;
+    background-color: #020617;
+    color: #e5e7eb;
+    font-size: 0.95rem;
+    outline: none;
+    cursor: pointer;
+    transition: border 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, transform 0.1s ease;
+    appearance: none;
+}
+
+/* Add a small down-arrow using background image */
+.options select {
+    background-image: linear-gradient(45deg, transparent 50%, #9ca3af 50%),
+                      linear-gradient(135deg, #9ca3af 50%, transparent 50%);
+    background-position:
+        calc(100% - 14px) calc(50% - 3px),
+        calc(100% - 9px) calc(50% - 3px);
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+}
+
+.options select:focus {
+    border-color: #22c55e;
+    box-shadow: 0 0 0 1px #22c55e;
+}
+
+.options select:active {
+    transform: scale(0.99);
+}
+
+/* ===== Button ===== */
+#exchange-button {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #f9fafb;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+    box-shadow: 0 10px 22px rgba(34, 197, 94, 0.35);
+}
+
+#exchange-button:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+    box-shadow: 0 14px 28px rgba(34, 197, 94, 0.4);
+}
+
+#exchange-button:active {
+    transform: translateY(1px) scale(0.99);
+    box-shadow: 0 6px 14px rgba(34, 197, 94, 0.3);
+}
+
+/* ===== Small Screen Adjustments ===== */
+@media (max-width: 480px) {
+    #full-form {
+        padding: 2rem 1.4rem;
+    }
+
+    .form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form > img {
+        transform: rotate(90deg);
+        margin: 0.4rem auto;
+    }
+
+    #full-form h1 {
+        font-size: 1.4rem;
+    }
+}
+
+#final-result{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
